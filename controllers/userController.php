@@ -1,7 +1,8 @@
 <?php
 // File: controllers/UserController.php
 
-require_once __DIR__ . '/../config/Database.php';
+require_once("../config/database.php");
+
 
 class UserController
 {
@@ -21,6 +22,7 @@ class UserController
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
 }
 ?>

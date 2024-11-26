@@ -1,18 +1,20 @@
 <?php
 // File: userController.php
+require_once '/../config/Database.php';
 
-require_once 'D:/poultryFarmManagement/config/Database.php';
-class UserController
+class UserModel
 {
     private $conn;
 
-    public function __construct() {
+    public function __construct()
+    {
         $database = new Database();
         $this->conn = $database->connect();
     }
 
     // Function สำหรับการดึงข้อมูลทั้งหมดจากตาราง users
-    public function getAllUsers() {
+    public function getAllUsers()
+    {
         $query = "SELECT * FROM users WHERE isDeleteUser = 0";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();

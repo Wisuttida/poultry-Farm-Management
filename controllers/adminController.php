@@ -76,5 +76,12 @@ class AdminController
             header('Location: /public/index.php?action=listUsers');
         }
     }
+
+    public function sendEmail($id)
+    {
+        
+        AdminController::listUsers();
+    }
+
 }
 ?>

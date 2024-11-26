@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config/Database.php';
+require_once __DIR__ . '/../config/database.php';
 
 // เปิดการแสดงข้อผิดพลาดสำหรับการ debug
 ini_set('display_errors', 1);
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     if ($updateStmt->execute()) {
                         // การอัปเดตสำเร็จ
-                        header("Location: /poultryFarmManagement/views/admin-usermanagement.php");
+                        header("Location: /db24/db24_044/poultryFarmManagement/public/index.php?page=user-management");
                         exit();
                     } else {
                         echo "การอัปเดตสถานะไม่สำเร็จ";

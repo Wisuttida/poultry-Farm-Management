@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../config/Database.php';
+require_once __DIR__ . '/../config/database.php';
 
 // เปิดการแสดงข้อผิดพลาดสำหรับการ debug
 ini_set('display_errors', 1);
@@ -10,8 +10,15 @@ error_reporting(E_ALL);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // ตรวจสอบว่ามีข้อมูลที่จำเป็นมาครบถ้วน
     if (
-        isset($_POST['pronoun'], $_POST['fName'], $_POST['lName'], $_POST['nickname'],
-            $_POST['username'], $_POST['position'], $_POST['password'])
+        isset(
+        $_POST['pronoun'],
+        $_POST['fName'],
+        $_POST['lName'],
+        $_POST['nickname'],
+        $_POST['username'],
+        $_POST['position'],
+        $_POST['password']
+    )
     ) {
         // ดึงค่าจากฟอร์ม
         $pronoun = $_POST['pronoun'];

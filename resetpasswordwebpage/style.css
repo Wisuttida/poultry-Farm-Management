@@ -1,0 +1,131 @@
+body{
+    margin: 0%;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+
+.container-wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    width: 40vh;
+    height: 50vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.correct-icon{
+    scale: 500%;
+    color: rgb(73, 196, 73);
+    margin: 5vh;
+    padding: 0;
+}
+
+.correct-text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.title-container h1{
+    margin: 0;
+}
+
+.title-container p{
+    margin: 0;
+    margin-bottom: 2rem;
+}
+
+.input-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    width: 35vh;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.input-wrapper div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-wrapper span{
+    font-size: small;
+}
+
+
+.input-container{
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
+    padding-right: 0.5rem;
+}
+
+.input-container input
+{
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+.btn-sub{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    border: none;
+    width: 65%;
+    padding: 12px;
+    border-radius: 1rem;
+    background-color: rgb(241, 240, 232);
+    cursor: pointer;
+    transition: all 0.5 ease-out;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button:hover{
+    background-color: rgb(73, 196, 73);
+    color: #fff;
+}
+
+.icon{
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5 ease-out;
+}
+
+.icon:hover{
+    transform: scale(1.2);
+    color: rgb(241, 240, 232);
+}
+
+
+
+
+
+

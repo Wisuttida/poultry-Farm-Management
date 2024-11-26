@@ -1,12 +1,10 @@
 <?php
-require_once __DIR__ . '/../controllers/UserController.php';
+require_once __DIR__ . '/../controllers/userController.php';  
 
-// เปิดการแสดงข้อผิดพลาดสำหรับการ debug
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// เรียกใช้งาน UserController
 $userController = new UserController();
 $users = $userController->getAllUsers();
 
@@ -45,7 +43,7 @@ $content = function () use ($users) {
         <td>
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <!-- Activate/Deactivate user checkbox -->
-                <form action="/poultryFarmManagement/controllers/toggleActivate.php" method="POST" class="d-inline">
+                <form action="../controllers/toggleActivate.php" method="post" class="d-inline">
                     <input type="hidden" name="user_id" value="<?php echo $user['userId']; ?>">
                     <input type="checkbox" onchange="this.form.submit()" <?php echo $user['isActivate'] ? 'checked' : ''; ?>>
                 </form>
@@ -55,7 +53,7 @@ $content = function () use ($users) {
                     <i class="fas fa-clipboard-list"></i>
                 </button>
                 <!-- Delete user form for soft delete -->
-<form action="/poultryFarmManagement/controllers/delete.php" method="POST" class="d-inline">
+<form action="../controllers/delete.php" method="post" class="d-inline">
     <input type="hidden" name="user_id" value="<?php echo $user['userId']; ?>">
     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this user?');">
         <i class="fas fa-trash-alt"></i>
@@ -67,7 +65,7 @@ $content = function () use ($users) {
     </tr>
 
     <!-- Edit User Modal -->
-    <form id="editAccountForm<?php echo $user['userId']; ?>" action="/poultryFarmManagement/controllers/update.php" method="POST" class="needs-validation" novalidate>
+    <form id="editAccountForm<?php echo $user['userId']; ?>" action="../controllers/update.php" method="POST" class="needs-validation" novalidate>
     <div class="modal fade" id="editUserModal<?php echo $user['userId']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
@@ -83,7 +81,7 @@ $content = function () use ($users) {
                     <div class="container">
                         <div class="row">
                             <div class="col d-flex flex-column align-items-center">
-                            <img class="img-profile rounded-circle mb-3" width="139" src="/poultryFarmManagement/public/img/login1.png" />
+                            <img class="img-profile rounded-circle mb-3" width="139" src="../public/img/login1.png"/>
                                 <div class="mb-3 w-100">
                                     <label for="line<?php echo $user['userId']; ?>" class="form-label">Line</label>
                                     <input type="text" class="form-control" id="line<?php echo $user['userId']; ?>" name="line" value="<?php echo $user['lineId']; ?>" required />
@@ -136,9 +134,12 @@ $content = function () use ($users) {
                                     </div>
 
                                     <div class="d-grid gap-2 w-100 mb-3">
-                                        <button class="btn btn-outline-success" type="button">
-                                            ส่ง Gmail สำหรับเปลี่ยนรหัสผ่าน
-                                        </button>
+                                        <form id="sendMail<?php echo $user['userId']; ?>" method="post" action="../controllers/sendGmail.php">
+                                                <input type="hidden" name="user_id" value="<?php echo $user['userId']; ?>">
+                                                <button formaction="../controllers/sendGmail.php?user_id=<?php echo $user['userId']; ?>" class="btn btn-outline-success" type="submit">
+                                                        ส่ง Gmail สำหรับเปลี่ยนรหัสผ่าน
+                                                </button>
+                                        </form>
                                     </div>
                             </div>
                         </div>
