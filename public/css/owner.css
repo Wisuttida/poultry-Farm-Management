@@ -1,0 +1,28 @@
+
+
+/* .fa-clipboard-list {
+    color: #5a5c69;
+} */
+
+
+.btn-small-block {
+    height: 1rem;
+    width: 1rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-map {
+    padding-bottom: 50%;
+    position: relative;
+}
+
+.google-map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
