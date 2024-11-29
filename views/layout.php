@@ -13,6 +13,23 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            height: 100%;
+            /* ให้แน่ใจว่า body และ html ครอบคลุมทั้งความสูงของหน้า */
+            margin: 0;
+            /* ลบ margin ของ body เพื่อไม่ให้เกิดช่องว่าง */
+        }
+
+        .sidebar {
+            position: relative;
+            height: 100%;
+            /* ให้ sidebar ยืดออกตามความสูงของหน้าจอ */
+            min-height: 100vh;
+            /* ใช้ 100vh ถ้าต้องการให้ sidebar ขยายเต็มหน้าจอ */
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -46,3 +63,4 @@
 </body>
 
 </html>
+

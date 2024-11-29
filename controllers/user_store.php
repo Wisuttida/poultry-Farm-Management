@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // ดำเนินการ SQL
                 if ($stmt->execute()) {
                     // เพิ่มผู้ใช้สำเร็จ
-                    header("Location: /poultryFarmManagement/views/admin-usermanagement.php");
+                    header("Location: /db24/db24_044/poultryFarmManagement/public/index.php?page=user-management");
                     exit();
                 } else {
                     echo "ไม่สามารถเพิ่มผู้ใช้ได้";
